@@ -52,9 +52,7 @@ class GoodsItem {
               <p>${this.price}</p>
               <button>купить</button>
             </div>`;
-  }
-
-
+    }
 }
 
 class GoodsList {
@@ -98,15 +96,42 @@ class GoodsBasket{
   addItemBasket(elem){
     if(!this.basket.includes(elem)){
       this.basket.push(elem)
+      this.render()
+      this.addBtn()
     }
   }
   getItemBasket(){
     return this.basket
   }
-  delItemBasket(elem){
-    if(this.basket.includes(elem)){
-      this.basket.pop(elem)
+  delItemBasket(id){
+    this.basket.forEach(elem =>{
+      if(elem.id_product == id){
+        this.basket.splice(this.basket.indexOf(elem) , 1)
+        
+      }
+    })
+    this.render()
+    this.addBtn()
+  }
+  
+  render(){
+    let listHtml="";
+    if(this.basket != 0){
+      this.basket.forEach(good => {
+        const goodItem = new GoodsItem(good.product_name, good.price , good.id_product);
+        listHtml += goodItem.render();
+      })
+      document.querySelector('.basket').innerHTML = listHtml;
+    }else{
+      document.querySelector('.basket').innerHTML = "Корзина пуста";
     }
+    
+  }
+  addBtn(){
+    document.querySelector(".basket").querySelectorAll("BUTTON").forEach(elem=>{
+      elem.textContent = "удалить"
+    })
+    
   }
 }
 const basket = new GoodsBasket()
@@ -119,6 +144,13 @@ document.querySelector(".goods-list").addEventListener("click" , event=>{
         basket.addItemBasket(elem)
       }
     })
+  }
+})
+
+const basketConteiner = document.querySelector(".basket")
+basketConteiner.addEventListener("click" , event => {
+  if(event.target.textContent == "удалить"){
+    basket.delItemBasket(event.target.closest(".goods-item").dataset.id)
   }
 })
 
