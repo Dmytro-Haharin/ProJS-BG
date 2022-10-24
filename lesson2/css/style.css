@@ -1,0 +1,51 @@
+body {
+  background-color: #5a5959;
+}
+
+.header {
+  height: 70px;
+  background-color: #393939;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.header__basket {
+  line-height: 70px;
+  cursor: pointer;
+  padding: 0 30px;
+}
+
+.header__basket:hover {
+  color: blue;
+}
+
+.goods-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.goods-item {
+  width: 10%;
+  height: 360px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  background-color: #3b3636;
+  margin-top: 3%;
+}
+/*# sourceMappingURL=style.css.map */
