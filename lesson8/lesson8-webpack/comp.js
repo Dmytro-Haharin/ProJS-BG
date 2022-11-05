@@ -1,0 +1,5 @@
+import goodListComp from "./comp/goods-list.js"
+import goodItemComp from "./comp/goods-item.js"
+import searchComp from "./comp/search.js"
+import basketListComp from "./comp/basket-list.js"
+import basketItemComp from "./comp/basket-item.js"
