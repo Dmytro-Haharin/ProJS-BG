@@ -1,0 +1,24 @@
+{
+  "name": "lesson8",
+  "version": "1.0.0",
+  "description": "home work for lesson8 ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmytro-Haharin/ProJS-BG.git"
+  },
+  "author": "Dmytro Haharin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dmytro-Haharin/ProJS-BG/issues"
+  },
+  "homepage": "https://github.com/Dmytro-Haharin/ProJS-BG#readme",
+  "dependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
